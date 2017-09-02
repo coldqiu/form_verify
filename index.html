@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/normalize/6.0.0/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="wrap wrap-sm">
+    <div class="header">
+      <h1>Yo.注册</h1>
+    </div>
+    <div class="form">
+      <form id="signup">
+        <div class="input-wrap">
+          <label for="">姓名</label>
+          <input name="name" data-rule='maxlength:5|minlength:2' type="text"  class="input-control">
+          <div id="name-input-error" class="input-error">格式有误！长度限制：2-5</div>
+        </div>
+        <div class="input-wrap">
+          <label for="">年龄</label>
+          <input name="age" data-rule='min:18' type="text"  class="input-control">
+          <div id="age-input-error" class="input-error">>=18</div>
+        </div>
+        <div class="input-wrap">
+          <label for="">用户名</label>     <!--好像是没在rule的值加JSON.parse(); 不支持：pattern:"^[a-z0-9]*$"|-->
+          <input name="username" data-rule='maxlength:8|minlength:4' type="text"  class="input-control">
+          <div id="username-input-error" class="input-error">格式有误！有效字符：小写字母和数字4-8</div>
+        </div>
+        <div class="input-wrap">
+          <label for="">密码</label>
+          <input name="password" data-rule='maxlength:18|minlength:6' type="password"  class="input-control">
+          <div id="password-input-error" class="input-error">密码长度6——18</div>
+        </div>
+        <div class="input-wrap">
+          <label for="">自我介绍</label>
+          <input name="intro" data-rule='required:fasle|maxlength:1024' type="text"  class="input-control">
+          <div id="intro-input-error" class="input-error">最大长度1024</div>
+        </div>
+        <button class="botton-contrl" type="submit">注册</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.0/jquery.js"></script>
+<script src="js/validator.js"></script>
+<script src="js/input.js"></script>
+<script src="js/main.js"></script>
+
+</html>
